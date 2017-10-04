@@ -1,0 +1,106 @@
+
+<section  class="main-article" *ngIf="jobsList">
+    <article>
+        <div >
+            <div>
+
+                    <div *ngFor="let job of jobsList.data">
+
+                        <div class="my-jobs">
+                            <div>
+                                <div  class="my-job-name"(click)="jobClicked(job)">
+
+                                    <p>{{job.name}}</p>
+                                    <p>{{job.short_description}}</p>
+                                </div>
+                                <div>
+                                    <button *ngIf="!user" class="my-trash" (click)="deleteJob(job)">
+                                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                                <div *ngIf="user">
+                                    <button *ngIf="!userApplied(job)" (click)="apply(job)">Apply</button>
+                                   <p *ngIf="userApplied(job)">Applied to JOB</p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+
+            </div>
+        </div>
+
+        <button class="my-add" *ngIf="!addAJob && !user" (click)="addJob()">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        </button>
+
+        <div *ngIf="addAJob" class="main-article">
+           <article>
+               <form
+                       [formGroup]="jobForm"
+                       (ngSubmit)="saveJob()"
+
+                       class="form-group"
+               >
+                   <div>
+                       <label for="name">Job Name:</label>
+                       <input class="form-control" id="name" [formControlName]="'name'" >
+                   </div>
+
+                   <div>
+                       <label for="shortDescription">Short Description:</label>
+                       <input class="form-control" id="shortDescription" [formControlName]="'short_description'">
+                   </div>
+
+                   <div>
+                       <label for="description">Description:</label>
+                       <textarea class="form-control" class="form-control" id="description" [formControlName]="'description'"></textarea>
+                   </div>
+
+                   <div>
+                       <label for="benefits">Benefits:</label>
+                       <input class="form-control" id="benefits" [formControlName]="'benefits'">
+                   </div>
+
+                   <div *ngIf=" skillList  ">
+                       <label>Skills:</label>
+
+                       <div [formArrayName]="'requirements'">
+
+
+                           <div *ngFor="let skill of jobForm.get('requirements').controls; let i=index">
+
+                               <div [formGroupName]="i">
+
+                                   <select  class="form-control" [formControlName]="'skillSelect'">
+                                       <option *ngFor="let skill of skillList.data" [value]="skill.id">{{skill.name}}</option>
+                                   </select>
+
+                                   <button class="my-trash" type="button" (click)="removeSkill(i)" >
+                                       <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                   </button>
+                               </div>
+
+                           </div>
+                           <br>
+                           <div>
+                               <button class="my-add" type="button" (click)="add(skill)" >
+                                   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                           </div>
+                           <br>
+
+                       </div>
+
+                   </div>
+
+                   <button>SaveJob</button>
+                   <button type="button" (click)="cancel()">Cancel</button>
+               </form>
+           </article>
+        </div>
+    </article>
+
+</section>
+
+
+<!--<pre>{{ skillList.data | json  }}</pre>-->

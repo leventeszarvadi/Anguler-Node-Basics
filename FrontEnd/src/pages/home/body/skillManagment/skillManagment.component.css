@@ -1,0 +1,41 @@
+.main-article{
+    margin-top:50px;
+    box-shadow: 3px 3px 3px;
+    border-style: groove;
+    margin-left: 50px;
+    margin-right: 50px;
+    text-align: center;
+    margin-bottom:50px;
+
+}
+
+
+input, textarea ,select {
+    width:200px;
+    display:inline;
+    margin-top:10px;
+}
+.my-skills{
+    background: #efefef;
+    margin-top:20px;
+    margin-botton:20px;
+    font-family: cursive;
+    font-weight: bold;
+    text-shadow: 2px -2px 2px gray;
+    font-size: 20px;
+}
+
+button{
+    font-size:15px;
+}
+
+.my-add{
+    background: limegreen;
+    margin-top:20px;
+}
+
+.my-trash{
+    background: red;
+    margin-top:10px;
+    margin-bottom:10px;
+}

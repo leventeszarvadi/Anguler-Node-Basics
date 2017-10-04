@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "target": "es5",
+        "lib": [
+            "es5",
+            "dom"
+        ],
+        "exclude": [
+            "node_modules",
+            "dist"
+        ]
+    }
+}

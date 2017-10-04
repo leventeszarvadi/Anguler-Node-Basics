@@ -1,0 +1,14 @@
+.main-article{
+    margin-top:50px;
+    box-shadow: 3px 3px 3px;
+    border-style: groove;
+}
+
+h3{
+    font-family: cursive;
+    text-align: center;
+    text-shadow: 20px -17px 2px gray;
+    font-size: 28px;
+    font-weight: bold;
+    color:lightgray;
+}

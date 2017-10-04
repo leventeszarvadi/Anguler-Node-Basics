@@ -1,0 +1,81 @@
+.main-article{
+    margin-top:50px;
+    box-shadow: 3px 3px 3px;
+    border-style: groove;
+    margin-left:20px;
+    margin-right:20px;
+    text-align: center;
+}
+
+.my-add{
+    background: limegreen;
+    margin-top:20px;
+}
+
+.my-trash{
+    background: red;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.main-article article div{
+    margin-top:5px;
+    margin-bottom:5px;
+    background: gray;
+}
+
+.my-jobs{
+
+    background: #efefef;
+    margin-top:20px;
+    margin-botton:20px;
+    font-family: cursive;
+    text-shadow: 2px -2px 2px gray;
+
+}
+
+.my-job-name{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.main-article article{
+
+    margin-bottom: 20px;
+    margin-top:20px;
+}
+
+
+input, textarea ,select {
+    width:200px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:10px;
+}
+
+/*
+
+
+
+
+
+
+
+
+.my-add{
+    background: limegreen;
+    margin-top:20px;
+}
+
+.my-trash{
+    background: red;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+button{
+    font-size:inherit;
+}*/

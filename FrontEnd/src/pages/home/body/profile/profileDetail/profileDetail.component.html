@@ -1,0 +1,13 @@
+
+
+<section class="main-article container"  >
+
+    <profile-view-component *ngIf="!inEdit && profile" [profile]="profile.data"></profile-view-component>
+    <profile-edit-component *ngIf="inEdit && profile" [profile]="profile.data" ></profile-edit-component>
+
+    <div>
+        <div *ngIf="!inEdit && (userProfile || admin)  ">
+            <button type="button" (click)="edit()">Edit</button>
+        </div>
+    </div>
+</section>

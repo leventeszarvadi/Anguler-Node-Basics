@@ -1,0 +1,65 @@
+<section *ngIf="profile">
+    <div  >
+
+        <div class="my-datas main-article"  >
+
+            <div class="">
+                <div class="">
+                    <div class=" my-name-part">
+                        <div class="" >
+                            <span class="glyphicon glyphicon-user"></span>
+                            {{profile.firstname}}
+                            {{profile.lastname}}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div>
+                <span class="	glyphicon glyphicon-phone"></span>
+                {{profile.phone}}
+            </div>
+
+            <div class="">
+                <span class="glyphicon glyphicon-envelope"></span>
+                {{profile.email}}
+            </div>
+
+            <div>
+                <span class="glyphicon glyphicon-map-marker"></span>
+                {{profile.address}},
+                {{profile.city}},
+                {{profile.country}}
+            </div>
+            <div>
+                <i class="fa fa-github"></i>
+                {{profile.github_ID}}
+            </div>
+
+            <div>
+                <span class="glyphicon glyphicon-globe"></span>
+                {{profile.website}}
+            </div>
+
+        </div>
+
+        <div>
+            <educationList-component [educationList]="profile.USER_EDUCATIONs"></educationList-component>
+        </div>
+
+        <div>
+            <workExperienceList-component [workExperienceList]="profile.USER_WORK_EXPERIENCEs" ></workExperienceList-component>
+        </div>
+
+        <div>
+            <h3>Skills:</h3>
+            <div class="skill-main">
+                <div *ngFor="let skill of profile.SKILLs">
+                    <p>{{skill.name}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

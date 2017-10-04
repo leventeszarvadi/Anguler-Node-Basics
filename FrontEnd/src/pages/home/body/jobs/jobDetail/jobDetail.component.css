@@ -1,0 +1,30 @@
+.main-article{
+    margin-top:50px;
+    box-shadow: 3px 3px 3px;
+    border-style: groove;
+    margin-left:20px;
+    margin-right:20px;
+    text-align: center;
+}
+
+
+.main-article div{
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+/*.main-article div div{
+
+    font-family: cursive;
+    font-weight: bold;
+    text-shadow: 2px -2px 2px gray;
+    font-size: 20px;
+    background: #efefef;
+    margin-left:20px;
+    margin-right: 20px;
+
+}
+
+button{
+    font-size:15px;
+}*/

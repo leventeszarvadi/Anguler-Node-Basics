@@ -1,0 +1,1 @@
+export {SkillManagmentComponent} from './skillManagment.component'

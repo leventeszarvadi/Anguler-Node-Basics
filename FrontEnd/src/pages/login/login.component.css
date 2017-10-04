@@ -1,0 +1,27 @@
+.my-login{
+    margin-top:100px;
+    font-family: cursive;
+
+}
+img{
+    height: 50px;
+    width: 50px;
+}
+
+.my-header{
+    margin-left:20px;
+}
+
+.my-base{
+
+}
+
+.my-panel{
+    background: rgb(2, 55, 90);
+    border-radius: 15px 15px 15px 15px;
+}
+
+.my-panel-header{
+    background: rgb(13, 176, 101);
+    border-radius: 15px 15px 15px 15px;
+}

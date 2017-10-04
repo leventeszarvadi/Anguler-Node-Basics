@@ -1,0 +1,5 @@
+
+<section *ngIf="educationList"  >
+    <h3>Educations</h3>
+    <education-component *ngFor="let education of educationList; " [value]="education"></education-component>
+</section>

@@ -1,0 +1,64 @@
+CREATE DATABASE  IF NOT EXISTS `internship` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `internship`;
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+--
+-- Host: localhost    Database: internship
+-- ------------------------------------------------------
+-- Server version	5.7.19-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `personal_infos`
+--
+
+DROP TABLE IF EXISTS `personal_infos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `personal_infos` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `FIRSTNAME` varchar(45) NOT NULL,
+  `LASTNAME` varchar(45) NOT NULL,
+  `PHONE` varchar(45) DEFAULT NULL,
+  `EMAIL` varchar(45) DEFAULT NULL,
+  `CITY` varchar(45) DEFAULT NULL,
+  `COUNTRY` varchar(45) DEFAULT NULL,
+  `ADDRESS` varchar(45) DEFAULT NULL,
+  `GITHUB_ID` varchar(45) DEFAULT NULL,
+  `WEBSITE` varchar(45) DEFAULT NULL,
+  `USERS_ID` int(11) NOT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `fk_PERSONAL_INFOS_USERS1_idx` (`USERS_ID`),
+  CONSTRAINT `fk_PERSONAL_INFOS_USERS1` FOREIGN KEY (`USERS_ID`) REFERENCES `users` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `personal_infos`
+--
+
+LOCK TABLES `personal_infos` WRITE;
+/*!40000 ALTER TABLE `personal_infos` DISABLE KEYS */;
+INSERT INTO `personal_infos` VALUES (29,'Hr','Hr','0764178878','lasdasd@afssfs','asdasda','asdasd','sdasd',NULL,'assdas',22),(30,'Admin','Admin',NULL,NULL,NULL,NULL,NULL,NULL,NULL,23),(31,'Levente','Szarvadi','0764178878','levente.szarvadi@gmail.com','Cluj-Napoca','Romania','342',NULL,'website',24),(33,'frontEnd1','frontEnd1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,26),(34,'frontEnd2','frontEnd2',NULL,NULL,NULL,NULL,NULL,NULL,NULL,27),(35,'frontEnd3','frontEnd3',NULL,NULL,NULL,NULL,NULL,NULL,NULL,28),(36,'frontEnd4','frontEnd4',NULL,NULL,NULL,NULL,NULL,NULL,NULL,29),(38,'frontEnd6','frontEnd6',NULL,NULL,NULL,NULL,NULL,NULL,NULL,31),(39,'frontEnd7','frontEnd7',NULL,NULL,NULL,NULL,NULL,NULL,NULL,32),(40,'frontEnd8','frontEnd8',NULL,NULL,NULL,NULL,NULL,NULL,NULL,33),(41,'frontEnd9','frontEnd9',NULL,NULL,NULL,NULL,NULL,NULL,NULL,34),(42,'frontEnd10','frontEnd10',NULL,NULL,NULL,NULL,NULL,NULL,NULL,35),(43,'frontEnd11','frontEnd11',NULL,NULL,NULL,NULL,NULL,NULL,NULL,36),(44,'frontEnd12','frontEnd12',NULL,NULL,NULL,NULL,NULL,NULL,NULL,37),(45,'frontEnd13','frontEnd13',NULL,NULL,NULL,NULL,NULL,NULL,NULL,38),(47,'frontEnd5','frontEnd5',NULL,NULL,NULL,NULL,NULL,NULL,NULL,40);
+/*!40000 ALTER TABLE `personal_infos` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2017-09-05  7:33:03

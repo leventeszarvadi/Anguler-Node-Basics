@@ -1,0 +1,13 @@
+<section *ngIf="job" class="main-article">
+    <div>
+        <div>
+            <job-edit-component [job]="job.data" *ngIf="inEdit"></job-edit-component>
+            <job-view-component [job]="job.data" *ngIf="!inEdit"></job-view-component>
+
+        </div>
+        <button *ngIf="!inEdit && !user" (click)="editJob()">Edit</button>
+        <button *ngIf="inEdit" (click)="cancel()">Cancel</button>
+    </div>
+
+</section>
+

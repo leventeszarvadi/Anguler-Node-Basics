@@ -1,0 +1,1 @@
+export {UserManagmentComponent} from './userManagment.component'

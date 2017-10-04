@@ -1,0 +1,42 @@
+<section class="my-base" >
+    <div class="container my-login">
+        <div class="row">
+
+            <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2 ">
+                <div class="panel panel-default my-panel">
+                    <div class="panel-heading my-panel-header">
+                        <div class="row">
+                            <div class="hidden-xs col-sm-2  col-md-2 ">
+                                <img src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAZ5AAAAJDIzZWI2MzUwLWIyYWUtNDE5Ny1hMGM2LTMxMjY1OTFhMGQ5NA.png" alt="Logo" title="Arobs Logo" >
+                            </div>
+                            <div class="col-sm-6 col-md-6 my-header" >
+                                <h3 >Login</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <form
+                                [formGroup]="loginForm"
+                                (ngSubmit)="loginButton()"
+                        >
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Username" id="username" [formControlName]="'username'">
+                            </div>
+
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Password" type="password" id="password" [formControlName]="'password'">
+                            </div>
+
+                            <button class="btn btn-lg btn-success btn-block" >Submit</button>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,57 @@
+
+<section *ngIf="job" >
+
+    <div class="my-name">
+        <div >
+            <p>{{job.name}}</p>
+            <p>{{job.description}}</p>
+            <p>{{job.benefits}}</p>
+        </div>
+        <hr>
+        <div>
+            <h3>Skills:</h3>
+            <div *ngFor="let skill of job.SKILLs">
+                <p> -> {{skill.name}}</p>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div *ngIf="!user">
+        <div>
+            <h4>In Quequ:</h4>
+            <div *ngFor="let user of job.USERs">
+                <div *ngIf="user.JOB_APPLIES.accepted===null">
+                    <div (click)="userDetail(user.PERSONAL_INFOs[0].id)">
+                        <div class="my-box">
+                            @{{user.PERSONAL_INFOs[0].lastname}} {{user.PERSONAL_INFOs[0].firstname}}
+                        </div>
+
+                    </div>
+
+                    <div>
+                        <button class="my-add" (click)="accept(user.JOB_APPLIES.id)">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </button>
+                        <button class="my-trash"(click)="decline(user.JOB_APPLIES.id)">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h4>Accepted:</h4>
+            <div *ngFor="let user of job.USERs">
+                <div *ngIf="user.JOB_APPLIES.accepted">
+                    <div (click)="userDetail(user.PERSONAL_INFOs[0].id)">
+                        <div class="my-box">
+                            #{{user.PERSONAL_INFOs[0].lastname}} {{user.PERSONAL_INFOs[0].firstname}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>

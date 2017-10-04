@@ -1,0 +1,5 @@
+
+<section *ngIf="workExperienceList" >
+    <h3>Work Experiences</h3>
+    <workExperience-component *ngFor="let workExperience of workExperienceList; " [value]="workExperience"></workExperience-component>
+</section>

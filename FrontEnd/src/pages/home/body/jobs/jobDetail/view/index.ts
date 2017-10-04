@@ -1,0 +1,1 @@
+export {JobViewComponent} from './job.view.component'

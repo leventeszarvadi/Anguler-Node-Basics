@@ -1,0 +1,41 @@
+<section class="main-article">
+    <div *ngIf="skillList">
+
+            <div *ngFor="let skill of skillList.data">
+                <div class="my-skills">
+                    <p>{{skill.name}}</p>
+                    <p>{{skill.description}}</p>
+                    <button class="my-trash "(click)="deleteSkill(skill)">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </button>
+                </div>
+
+            </div>
+
+    </div>
+
+    <div>
+        <button class="my-add" *ngIf="!addSkill" (click)="addASkill()">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        </button>
+        <div *ngIf="addSkill">
+            <form
+                    [formGroup]="skillForm"
+                    (ngSubmit)="saveSkill()"
+            >
+                <div>
+                    <label for="name">Name:</label>
+                    <input class="form-control" id="name" [formControlName]="'name'">
+                </div>
+
+                <div>
+                    <label for="description">Description:</label>
+                    <textarea class="form-control" id="description" [formControlName]="'description'"></textarea>
+                </div>
+
+                <button>SaveSkill</button>
+                <button type="button" (click)="cancel()">Cancel</button>
+            </form>
+        </div>
+    </div>
+</section>

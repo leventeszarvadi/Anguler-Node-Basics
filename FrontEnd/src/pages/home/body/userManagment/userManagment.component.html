@@ -1,0 +1,65 @@
+
+<section *ngIf="usersList && userRoleList" class="main-article">
+    <article class="content">
+            <div *ngFor="let user of usersList.data">
+                <div class="my-user">
+                    <p class="username">{{user.username}}</p>
+                    <button  class="my-trash" *ngIf="user.user_roles_id==1 || admin" (click)="deleteUser(user)">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </button>
+
+                    <div *ngIf="admin">
+                        <div>
+                            <select  class="form-control " [(ngModel)]="user.USER_ROLE.id">
+                                <option *ngFor="let role of userRoleList.data" [ngValue]="role.id">{{role.code}}</option>
+                            </select>
+                            <button (click)="saveNewRole(user)">Save</button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        <div>
+            <button class="my-add" *ngIf="!addUser" (click)="addAUser()">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </button>
+            <div *ngIf="addUser">
+                <form
+                        [formGroup]="addUserForm"
+                        (ngSubmit)="saveUser()"
+                >
+                    <div>
+                        <label for="username">Username:</label>
+                        <input class="form-control " id="username" [formControlName]="'username'">
+                    </div>
+
+                    <div>
+                        <label for="password">Password:</label>
+                        <input class="form-control " id="password" [formControlName]="'password'">
+                    </div>
+
+                    <div>
+                        <label for="firstname">Firstname:</label>
+                        <input  class="form-control " id="firstname" [formControlName]="'firstname'">
+                    </div>
+
+                    <div>
+                        <label for="lastname">Lastname:</label>
+                        <input class="form-control " id="lastname" [formControlName]="'lastname'">
+                    </div>
+
+                    <div *ngIf="admin">
+                        <select  class="form-control " [formControlName]="'role'">
+                            <option *ngFor="let role of userRoleList.data" [value]="role.id">{{role.code}}</option>
+                        </select>
+                    </div>
+
+                    <button>SaveUser</button>
+                    <button type="button" (click)="cancel()">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </article>
+</section>

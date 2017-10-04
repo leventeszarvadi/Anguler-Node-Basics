@@ -1,0 +1,213 @@
+<section *ngIf="profile">
+    <div class="my-base">
+        <form
+                [formGroup]="editeProfileForm"
+                (ngSubmit)="saveModifiedProfile()"
+        >
+            <div>
+                <div>
+                    <label for="firstName">First Name:</label>
+                    <input class="form-control" id="firstName" [formControlName]="'firstname'">
+                </div>
+
+                <div>
+                    <label for="lastName">Last Name:</label>
+                    <input class="form-control" id="lastName" [formControlName]="'lastname'">
+                </div>
+
+
+                <div>
+                    <label for="phone">Phone:</label>
+                    <input class="form-control" id="phone" [formControlName]="'phone'">
+                </div>
+
+                <div>
+                    <label for="email">Email:</label>
+                    <input  class="form-control" id="email" [formControlName]="'email'">
+                </div>
+
+                <div>
+                    <label for="country">Country:</label>
+                    <input class="form-control" id="country" [formControlName]="'country'">
+                </div>
+
+                <div>
+                    <label for="city">City:</label>
+                    <input  class="form-control" id="city" [formControlName]="'city'">
+                </div>
+
+                <div>
+                    <label for="address">Address:</label>
+                    <input class="form-control" id="address" [formControlName]="'address'">
+                </div>
+
+                <div>
+                    <label for="website">Website:</label>
+                    <input class="form-control" id="website" [formControlName]="'website'">
+                </div>
+
+                <div>
+                    <label for="githubID">GithubID:</label>
+                    <input class="form-control" id="githubID" [formControlName]="'github_ID'">
+                </div>
+
+            </div>
+            <hr>
+
+            <div class="my-part">
+                <div [formArrayName]="'educations'">
+                    <h3>Educations</h3>
+
+
+                    <div *ngFor="let education of editeProfileForm.get('educations').controls; let i=index">
+                        <h4>Education #{{i+1}}</h4>
+
+                        <div [formGroupName]="i">
+                            <div>
+                                <label for="institution">Institution: </label>
+                                <input class="form-control" id="institution"[formControlName]="'institution'">
+                            </div>
+
+                            <div>
+                                <label for="specialization">Speciaization: </label>
+                                <input class="form-control" id="specialization" [formControlName]="'specialization'">
+                            </div>
+
+                            <div>
+                                <label for="description">Description: </label>
+                                <input  class="form-control" id="description" [formControlName]="'description'">
+                            </div>
+
+                            <div>
+                                <label for="ed_city">City: </label>
+                                <input class="form-control" id="ed_city" [formControlName]="'city'">
+                            </div>
+
+                            <div>
+                                <label for="ed_country">Country: </label>
+                                <input class="form-control" id="ed_country"[formControlName]="'country'">
+                            </div>
+
+                            <div>
+                                <label for="graduatedYear">Graduated Year: </label>
+                                <input class="form-control" id="graduatedYear" [formControlName]="'graduated_year'">
+                            </div>
+
+
+                            <!-- <div [formArrayName]="'curses'">
+                                 <h4>Curses</h4>
+
+                                 &lt;!&ndash;<button type="button" (click)="addCurse(education)">Add Curse</button>&ndash;&gt;
+
+                                 <div *ngFor="let curse of editeProfileForm.get('educations').controls[i].get('curses').controls; let j=index">
+                                     <label>Curses# {{j+1}}</label>
+                                     <button type="button" (click)="deleteCurse(i,j)">DeleteCurse</button>
+                                     <input [formControlName]="j">
+                                 </div>
+
+                             </div>-->
+
+                            <button class="my-trash" type="button" (click)="deleteEducation(i)">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </div>
+
+                    </div>
+                    <button class="my-plus" type="button" (click)="addEducation()">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+
+                </div>
+            </div>
+            <hr>
+
+            <div class="my-part">
+                <div [formArrayName]="'workExperience'">
+                    <h3>Work Experince</h3>
+
+
+                    <div *ngFor="let work of editeProfileForm.get('workExperience').controls; let i=index">
+                        <h4>Work #{{i+1}}</h4>
+
+                        <div [formGroupName]="i">
+
+                            <div>
+                                <label for="company_name">Company Name: </label>
+                                <input class="form-control" id="company_name"[formControlName]="'company_name'">
+                            </div>
+
+                            <div>
+                                <label for="position">Position: </label>
+                                <input class="form-control" id="position" [formControlName]="'position'">
+                            </div>
+
+                            <div>
+                                <label for="start_date">Start Date: </label>
+                                <input class="form-control" id="start_date" [formControlName]="'start_date'">
+                            </div>
+
+                            <div>
+                                <label for="end_date">End Date:  </label>
+                                <input class="form-control" id="end_date" [formControlName]="'end_date'">
+                            </div>
+
+                            <!-- <div [formArrayName]="'curses'">
+                                 <h4>Curses</h4>
+
+                                 &lt;!&ndash;<button type="button" (click)="addCurse(education)">Add Curse</button>&ndash;&gt;
+
+                                 <div *ngFor="let curse of editeProfileForm.get('educations').controls[i].get('curses').controls; let j=index">
+                                     <label>Curses# {{j+1}}</label>
+                                     <button type="button" (click)="deleteCurse(i,j)">DeleteCurse</button>
+                                     <input [formControlName]="j">
+                                 </div>
+
+                             </div>-->
+
+                            <button class="my-trash" type="button" (click)="deleteWorkExperince(i)">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </div>
+
+
+                    </div>
+                    <button class="my-plus" type="button" (click)="addWorkExperince()">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                </div>
+            </div>
+<hr>
+
+            <div class="my-part">
+                <div *ngIf=" skillList  ">
+                    <label>Skills:</label>
+
+                    <div [formArrayName]="'skills'">
+
+                        <div *ngFor="let skill of editeProfileForm.get('skills').controls; let i=index">
+
+                            <div [formGroupName]="i">
+                                <select class="form-control"  [formControlName]="'skillSelect'">
+                                    <option *ngFor="let skill of skillList.data" [value]="skill.id">{{skill.name}}</option>
+                                </select>
+                                <button class="my-trash" type="button" (click)="deleteSkill(i)">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </button>
+                            </div>
+
+                        </div>
+                        <br>
+
+                        <button class="my-plus" type="button" (click)="addASkill()" >
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+
+                    </div>
+
+                </div>
+            </div>
+            <button>Submit</button>
+
+        </form>
+    </div>
+</section>

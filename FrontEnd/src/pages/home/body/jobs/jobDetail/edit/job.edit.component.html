@@ -1,0 +1,55 @@
+
+
+<section *ngIf="editJob">
+    <form
+            [formGroup]="editJob"
+            (ngSubmit)="saveJob()"
+    >
+        <div>
+            <label for="name">Job Name:</label>
+            <input id="name" [formControlName]="'name'">
+        </div>
+
+        <div>
+            <label for="shortDescription">Short Description:</label>
+            <input id="shortDescription" [formControlName]="'short_description'">
+        </div>
+
+        <div>
+            <label for="description">Description:</label>
+            <input id="description" [formControlName]="'description'">
+        </div>
+
+        <div>
+            <label for="benefits">Benefits:</label>
+            <input id="benefits" [formControlName]="'benefits'">
+        </div>
+
+        <div *ngIf=" skillList  ">
+            <label>Skills:</label>
+
+            <div [formArrayName]="'requirements'">
+
+
+                <div *ngFor="let skill of editJob.get('requirements').controls; let i=index">
+
+                    <div [formGroupName]="i">
+                        <select  [formControlName]="'skillSelect'">
+                            <option *ngFor="let skill of skillList.data" [value]="skill.id">{{skill.name}}</option>
+                        </select>
+                        <button type="button" (click)="removeSkill(i)">Remove</button>
+                    </div>
+
+                </div>
+                <br>
+
+                <button type="button" (click)="add()" >Add</button>
+
+            </div>
+
+        </div>
+
+
+        <button>SaveJob</button>
+    </form>
+</section>

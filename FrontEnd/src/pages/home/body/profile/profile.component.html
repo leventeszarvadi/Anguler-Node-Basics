@@ -1,0 +1,60 @@
+
+
+<article class="main-article container">
+    <section *ngIf="!user && usersNameList" >
+
+        <div class="row centered">
+            <div *ngFor="let user of usersNameList.data">
+
+                <div class="my-box col-xs-6 col-sm-4 col-md-4" (click)="profileClicked(user)">
+
+                    {{user.lastname}} {{user.firstname}}
+                </div>
+
+             </div>
+        </div>
+    </section>
+
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<ul>
+    <li *ngFor="let content of someContent"
+        (click)="changeContent(content.name)"
+    >
+        <p>{{ content.name }}</p>
+    </li>
+</ul>
+*********************************************
+
+<section *ngIf="activeContent === 'content1'">
+    <h1>{{ someContent[0].content }}</h1>
+</section>
+
+
+<section *ngIf="activeContent === 'content2'">
+    <h1>{{ someContent[1].content }}</h1>
+</section>
+-->

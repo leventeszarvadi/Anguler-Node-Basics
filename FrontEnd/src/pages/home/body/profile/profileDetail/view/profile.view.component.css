@@ -1,0 +1,66 @@
+
+.my-datas p{
+    font-weight: bold;
+    color:white;
+}
+
+.main-article{
+    margin:30px 30px 30px 30px ;
+    box-shadow: 3px 3px 3px;
+    border-style: groove;
+    background: lightgray;
+    text-align: center;
+    width: 300px;
+
+}
+
+.my-datas{
+    font-family: cursive;
+    min-width: 200px;
+    margin: 30px auto 30px auto;
+
+}
+
+.my-part{
+    display:inline-flex;
+}
+
+.my-part div {
+    margin:0 0 0 10px;
+}
+
+.my-lastname{
+    font-weight: bold;
+
+}
+
+.my-name-part{
+    text-align: center;
+}
+
+
+h3{
+    font-family: cursive;
+    text-align: center;
+    text-shadow: 20px -17px 2px gray;
+    font-size: 28px;
+    font-weight: bold;
+    color:#eeeeee;
+
+}
+
+.skill-main{
+    box-shadow: 3px 3px 3px;
+    border-style: groove;
+    width: 200px;
+    background: lightgray;
+    margin: 20px 20px 20px 20px;
+    font-family: cursive;
+    display: inline-block;
+    background: gray;
+}
+.skill-main div{
+    margin-top:5px;
+    margin-bottom:5px;
+    background: lightgray;
+}

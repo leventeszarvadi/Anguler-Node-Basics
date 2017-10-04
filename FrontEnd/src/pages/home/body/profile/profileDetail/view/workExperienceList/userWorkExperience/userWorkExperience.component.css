@@ -1,0 +1,26 @@
+.main-article{
+    box-shadow: 3px 3px 3px;
+    border-style: groove;
+    width: 200px;
+    background: lightgray;
+    margin: 20px 20px 20px 20px;
+    font-family: cursive;
+    display: inline-block;
+    background: gray;
+}
+.main-article div{
+    margin-top:5px;
+    margin-bottom:5px;
+    background: lightgray;
+}
+/*
+p {
+    text-align: center;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+div{
+    background: #efefef;
+
+}*/

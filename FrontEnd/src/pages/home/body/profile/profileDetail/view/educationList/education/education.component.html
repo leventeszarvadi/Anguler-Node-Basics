@@ -1,0 +1,64 @@
+
+<section *ngIf="education" class="main-article">
+
+    <div>
+        <label for="schoolName">School Name:</label>
+        <p id="schoolName">{{education.institution}}</p>
+    </div>
+
+    <div>
+        <label for="specialization">Specialization:</label>
+        <p id="specialization">{{education.specialization}}</p>
+    </div>
+
+    <div>
+        <label for="description">Description:</label>
+        <p id="description">{{education.description}}</p>
+    </div>
+
+    <div>
+        <label for="city">City:</label>
+        <p id="city">{{education.city}}</p>
+    </div>
+
+    <div>
+        <label for="country">Country:</label>
+        <p id="country">{{education.country}}</p>
+    </div>
+
+    <div>
+        <label for="year">Year:</label>
+        <p id="year">{{education.graduated_year}}</p>
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+<div *ngIf="education.curses.length > 0">
+    <h5>Curses:</h5>
+    <p *ngFor="let curs of education.curses">{{curs}}</p>
+</div>-->

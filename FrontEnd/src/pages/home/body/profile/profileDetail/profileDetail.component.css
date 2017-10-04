@@ -1,0 +1,9 @@
+.main-article{
+    margin:30px 30px 30px 30px;
+    box-shadow: 3px 3px 3px;
+    border-style: groove;
+    background-image: url('https://pbs.twimg.com/media/C-zkc-aWAAA9RZq.jpg');
+    min-width: 360px;
+    text-align:center;
+}
+

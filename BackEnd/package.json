@@ -1,0 +1,22 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./hr/src/app.js"
+  },
+  "author": "Levi",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "express-method-override": "0.0.3",
+    "express-validator": "^3.2.1",
+    "method-override": "^2.3.9",
+    "mysql2": "^1.4.1",
+    "nodemon": "^1.11.0",
+    "sequelize": "^4.6.0"
+  }
+}

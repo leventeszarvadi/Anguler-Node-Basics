@@ -1,0 +1,47 @@
+{
+  "jobs":[
+    {
+      "id":0,
+      "name":"Front-End Developer",
+      "shortDescription":"This is a good job",
+      "description":"Description # 1"
+    },
+    {
+      "id":1,
+      "name":"First Job",
+      "shortDescription":"This is first Job",
+      "description":"This is first Job"
+    }
+  ],
+
+  "users":[
+    {
+      "id":0,
+      "firstName":"Levente",
+      "lastName":"Szarvadi",
+      "age":21,
+      "phone":"0764178878",
+      "educations":[
+        {
+          "institution":"University Babes-Bolyai",
+          "specialization":"informatica",
+          "duration":"2015.09.15 - Present",
+          "city":"Cluj-Napoca",
+          "country":"Romania",
+          "curses":[
+            "First","Second","Third"
+          ]
+        },
+        {
+          "institution":"Colegiul National 'Silvania'",
+          "specialization":"Mate-Info",
+          "duration":"2011.09.15 - 2015.06.22",
+          "city":"Zalau",
+          "country":"Romania",
+          "curses":[]
+        }
+      ]
+
+    }
+  ]
+}

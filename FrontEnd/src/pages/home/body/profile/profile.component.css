@@ -1,0 +1,41 @@
+.main-article{
+    margin:30px 30px 30px 30px;
+    box-shadow: 3px 3px 3px;
+    border-style: groove;
+    min-width: 210px;
+    background-image: url('https://pbs.twimg.com/media/C-zkc-aWAAA9RZq.jpg');
+
+}
+
+
+
+.my-box{
+    height:250px;
+    width:180px;
+    background: gray;
+    margin: 10px 10px 10px 10px;
+
+    box-shadow: 3px 3px 3px;
+    border-style: groove;
+    background-image: url('http://www.ruralagriventures.com/wp-content/uploads/2017/05/man-team.jpg');
+    background-size: 200px 180px;
+    background-repeat: no-repeat;
+    font-family: cursive;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 180px;
+    font-size: 18px;
+
+}
+
+
+
+.my-box:hover{
+    color:green;
+    cursor:pointer;
+}
+
+.my-box img{
+    height:250px;
+    width:200px;
+}
